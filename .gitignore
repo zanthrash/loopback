@@ -1,0 +1,11 @@
+.DS_Store
+.git
+*.log
+*.iml
+*.ser
+.idea/
+*.war
+**/target/
+**/database/
+**/out/
+*~
