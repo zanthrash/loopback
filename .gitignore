@@ -5,7 +5,9 @@
 *.ser
 .idea/
 *.war
-**/target/
+target/
+out/
+src/
 **/database/
 **/out/
 *~
