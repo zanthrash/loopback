@@ -9,6 +9,7 @@
 
     </head>
     <body>
+        <div id="headerBar"></div>
         <div id="page">
             <div id="header">
                 <g:render template="/layouts/header" />

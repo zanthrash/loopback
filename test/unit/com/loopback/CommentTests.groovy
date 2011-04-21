@@ -2,7 +2,7 @@ package com.loopback
 
 import grails.test.*
 
-class SpeekerTests extends GrailsUnitTestCase {
+class CommentTests extends GrailsUnitTestCase {
     protected void setUp() {
         super.setUp()
     }

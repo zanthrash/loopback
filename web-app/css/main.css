@@ -275,30 +275,41 @@ th.desc a {
 
 /* *******************ALL MY STUFF *******************/
 #page {
-    display:block;
+    display: block;
     width: 950px;
-    margin:0px auto
+    margin: 0px auto;
+}
+
+#headerBar {
+    height:40px;
+    background-color:blue;
+    position:absolute;
+    left:0;
+    width:100%;
+    z-index:-1;
 }
 
 #header {
-    height:20px;
-    color: orange;
-    background:blue;
+    padding-top:20px;
 }
 
-#content {
-    width:100%;
+#innerPage{
+
     float:left;
+}
+
+#content{
+    width:auto
 }
 
 #content #sidebar {
     float:left;
-    width:200px;
+    width:250;
 }
 
 #content #main {
     float:left;
-    width:750px;
+    width:700px;
 }
 
 #footer {
@@ -306,4 +317,12 @@ th.desc a {
     height:40px;
     color:orange;
     background:blue;
+}
+
+#commentBox{
+    border:1px solid #000;
+    background-color:#d3d3d3;
+    width:100%;
+    height:750px;
+    overflow-y:scroll;
 }

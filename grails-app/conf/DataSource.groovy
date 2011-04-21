@@ -13,9 +13,17 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            url = "jdbc:hsqldb:mem:devDB"
+            driverClassName = "com.mysql.jdbc.Driver"
+//            driverClassName = "com.p6spy.engine.spy.P6SpyDriver" // use this driver to enable p6spy logging
+            dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+			schema = 'loopback'
+			url= "jdbc:mysql://localhost/${schema}"
+            dbCreate = "create-drop"
+            username = "loopback"
+            password = "loopback"
+            loggingSql = false
         }
+
     }
     test {
         dataSource {
