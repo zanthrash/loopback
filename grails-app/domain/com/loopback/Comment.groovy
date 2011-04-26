@@ -4,6 +4,7 @@ class Comment {
 
     Date dateCreated
     String text
+    String clientIPAddress
 
 
     static constraints = {

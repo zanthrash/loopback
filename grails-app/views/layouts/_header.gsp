@@ -1,1 +1,1 @@
-<p>HEADER</p>
+<g:pageProperty name="page.header"/>

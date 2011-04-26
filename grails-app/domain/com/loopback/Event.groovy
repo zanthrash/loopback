@@ -4,7 +4,7 @@ class Event {
 
     String name
 
-    static hasMany = [speakers: Speaker]
+    static hasMany = [presentations: Presentation]
 
     static constraints = {
         name nullable: false, blank: false, maxSize: 40

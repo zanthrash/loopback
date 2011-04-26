@@ -11,4 +11,9 @@ class Speaker {
 
     static constraints = {
     }
+
+
+    def getFullName() {
+        "${firstName} ${lastName}".toString()
+    }
 }

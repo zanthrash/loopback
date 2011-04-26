@@ -1,13 +1,13 @@
 <head>
-<meta name='layout' content='main' />
+<meta name='layout' content='app' />
 <title>Login</title>
 <style type='text/css' media='screen'>
 #login {
-	margin:15px 0px; padding:0px;
+	margin:100px 0px; padding:0px;
 	text-align:center;
 }
 #login .inner {
-	width:260px;
+	width:485px;
 	margin:0px auto;
 	text-align:left;
 	padding:10px;
@@ -50,21 +50,31 @@
 			</g:if>
 			<div class='fheader'>Please Login..</div>
 			<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+                <div id="right">
+                    <p>
+                        <label for='username'>Login ID</label>
+                        <input type='text' class='text_' name='j_username' id='username'/>
+                    </p>
+                    <p>
+                        <label for='password'>Password</label>
+                        <input type='password' class='text_' name='j_password' id='password'/>
+                    </p>
+                    <p>
+                        <label for='remember_me'>Remember me</label>
+                        <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'
+                            <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+                    </p>
+                </div>
+                <div id="left">
+                    <p>
+                        <label for="accessCode">Access Code:</label>
+                        <g:textField name="accessCode"/>
+                    </p>
+
+                </div>
+
 				<p>
-					<label for='username'>Login ID</label>
-					<input type='text' class='text_' name='j_username' id='username' />
-				</p>
-				<p>
-					<label for='password'>Password</label>
-					<input type='password' class='text_' name='j_password' id='password' />
-				</p>
-				<p>
-					<label for='remember_me'>Remember me</label>
-					<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'
-					<g:if test='${hasCookie}'>checked='checked'</g:if> />
-				</p>
-				<p>
-					<input type='submit' value='Login' />
+					<input type='submit' value='Enter' />
 				</p>
 			</form>
 		</div>

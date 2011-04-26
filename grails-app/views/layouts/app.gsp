@@ -19,9 +19,9 @@
                 <g:layoutBody />
             </div>
 
-            <div id="footer">
-                <g:render template="/layouts/footer"/>
-            </div>
+            %{--<div id="footer">--}%
+                %{--<g:render template="/layouts/footer"/>--}%
+            %{--</div>--}%
         </div>
     </body>
 </html>
