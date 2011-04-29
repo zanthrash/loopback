@@ -20,11 +20,7 @@ body {
 	padding:20px;
 }
 
-a:link, a:visited, a:hover {
-    color: #666;
-    font-weight: bold;
-    text-decoration: none;
-}
+
 
 h1 {
     color: #48802c;
@@ -277,6 +273,17 @@ th.desc a {
 body {
     /*background:#A48E5F;*/
 }
+
+a:link, a:visited, a:hover {
+    color: #4E453B;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a#homelink:link{
+    color:#fff;
+}
+
 #page {
     display: block;
     width: 950px;
@@ -295,7 +302,7 @@ body {
 }
 
 #header {
-    padding-top:30px;
+    padding-top:10px;
     color:black;
 }
 
@@ -309,7 +316,8 @@ body {
 }
 
 #content{
-    width:auto
+    width:auto;
+    margin-top:10px;
 }
 
 #content #sidebar {
@@ -321,6 +329,7 @@ body {
 #content #main {
     float:left;
     width:700px;
+    font-size:1.2em;
 }
 
 #footer {
@@ -346,4 +355,15 @@ body {
 #login #left {
     float:left;
     margin: 0 0 0 10px;
+}
+
+div#userinfo{
+    display:inline;
+    /*position:absolute;*/
+    /*top:10px;*/
+    float:right;
+}
+
+#sidebar #accessCode {
+    font-size:2em;
 }

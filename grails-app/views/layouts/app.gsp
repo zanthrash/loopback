@@ -4,8 +4,11 @@
         <title>
             <g:layoutTitle default="Loopback"/>
         </title>
-        <g:layoutHead />
+        <g:javascript src="jquery/jquery-1.5.2.js" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Pacifico|Lobster|Cabin+Sketch:bold">
         <link href="${resource(dir:'css', file:'main.css')}" rel="stylesheet"/>
+        <g:layoutHead />
+
 
     </head>
     <body>

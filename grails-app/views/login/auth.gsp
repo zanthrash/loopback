@@ -1,7 +1,9 @@
 <head>
 <meta name='layout' content='app' />
 <title>Login</title>
+
 <style type='text/css' media='screen'>
+
 #login {
 	margin:100px 0px; padding:0px;
 	text-align:center;
@@ -11,8 +13,10 @@
 	margin:0px auto;
 	text-align:left;
 	padding:10px;
-	border-top:1px dashed #499ede;
-	border-bottom:1px dashed #499ede;
+
+    border:6px solid #2B251E;
+	/*border-top:1px dashed #499ede;*/
+	/*border-bottom:1px dashed #499ede;*/
 	background-color:#EEF;
 }
 #login .inner .fheader {
@@ -40,6 +44,7 @@
 #login .inner .text_ {width:120px;}
 #login .inner .chk {height:12px;}
 </style>
+    <g:javascript src="login.js" />
 </head>
 
 <body>

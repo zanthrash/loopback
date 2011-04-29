@@ -13,13 +13,10 @@
      <title>Simple GSP page</title>
   </head>
   <body>
-    <content tag="header">
-        ${speaker.fullName}
-    </content>
 
     <div id="main">
         <g:each in="${speaker.presentations}" var="presentation">
-            <p><g:link controller="presentation" action="show" id="${presentation.id}"> ${presentation.title}</g:link></p>
+            <p><g:link controller="presentation" action="show" id="${presentation.id}"> ${presentation.title} ${presentation.event.name}</g:link></p>
         </g:each>
     </div>
   </body>

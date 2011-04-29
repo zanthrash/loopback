@@ -2,16 +2,27 @@ package com.loopback
 
 class Presentation {
 
-    static belongsTo = Speaker
-    static hasMany = [comments: Comment, speakers:Speaker]
+    static hasMany = [comments: Comment]
+    Event event
+    Speaker speaker
+    Date dateCreated
+    Date date
     String title
     String accessCode
-
 
     static constraints = {
         title nullable: false, blank: false
         accessCode nullable: false, blank: false
+        date nullable: true
+        event nullable: true
     }
 
+    def commentCountByMember() {
+        def result = [:]
+        comments.each {
+           result[it.clientIPAddress] = result.get(it.clientIPAddress, 0) + 1
+        }
 
+        result
+    }
 }
