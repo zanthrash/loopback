@@ -280,6 +280,14 @@ a:link, a:visited, a:hover {
     text-decoration: none;
 }
 
+#main h1 {
+    font-family:"Permanent Marker";
+    font-size:2.4em;
+    color:black;
+    border-bottom:2px solid black;
+    margin:0;
+}
+
 a#homelink:link{
     color:#fff;
 }
@@ -298,7 +306,12 @@ a#homelink:link{
     left:0;
     width:100%;
     z-index:-1;
+}
 
+#header_text {
+    font-family:'Lobster', serif;
+    font-size:33px;
+    color:white;
 }
 
 #header {
@@ -347,8 +360,28 @@ a#homelink:link{
     overflow-y:scroll;
 }
 
+.comment {
+    margin-bottom:3px;
+}
+
+.comment h2 {
+    padding:5px;
+    font-family:'Cabin Sketch';
+    font-size:4em;
+}
+
+.comment .commentInfo{
+    background-color:black;
+    color:#f5f5f5;
+    padding:0 15px 0 15px;
+    -moz-border-radius:5px;
+}
+
+.commentInfo .comment_client {
+    float:right;
+}
+
 #login #right {
-    color:red;
     float:left;
 }
 
@@ -366,4 +399,117 @@ div#userinfo{
 
 #sidebar #accessCode {
     font-size:2em;
+}
+
+#sidebar #comment_count {
+    margin-top:30px;
+}
+
+#sidebar #comment_count p {
+    font-size:2em;
+    margin-bottom: 5px;
+}
+
+#sidebar #comment_count h3 {
+    font-family:"Inconsolata";
+}
+
+/*		Default Layout: 992px.
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+body {
+	/*width: 896px;*/
+	/*padding: 0px 48px 84px;*/
+	/*background: rgb(232,232,232);*/
+	/*color: rgb(60,60,60);*/
+	/*-webkit-text-size-adjust: 100%; *//* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	body {
+		width: 712px;
+		padding: 0px 28px 60px;
+	}
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+
+	body {
+		width: 252px;
+		padding: 0px 34px 60px;
+	}
+
+}
+
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	body {
+		width: 436px;
+		padding: 0px 22px 48px;
+	}
+
+}
+
+
+/*	Retina media query.
+	Overrides styles for devices with a
+	device-pixel-ratio of 2+, such as iPhone 4.
+-----------------------------------------------    */
+
+@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+
+	body {
+
+	}
+
+    #headerBar {
+        height: 95px;
+        background-color: #F26205; /*background-image: -moz-linear-gradient(top, #F26205, #F24B05 ,#F26205);*/
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+
+    }
+
+    #header_text {
+        font-size:70px;
+    }
+
 }

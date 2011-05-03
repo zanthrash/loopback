@@ -5,7 +5,7 @@
             <g:layoutTitle default="Loopback"/>
         </title>
         <g:javascript src="jquery/jquery-1.5.2.js" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Pacifico|Lobster|Cabin+Sketch:bold">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Pacifico|Lobster|Cabin+Sketch:bold|Permanent+Marker|Inconsolata">
         <link href="${resource(dir:'css', file:'main.css')}" rel="stylesheet"/>
         <g:layoutHead />
 

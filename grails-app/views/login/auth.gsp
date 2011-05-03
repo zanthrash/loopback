@@ -43,6 +43,10 @@
 #login .inner .login_message {color:red;}
 #login .inner .text_ {width:120px;}
 #login .inner .chk {height:12px;}
+#submit_button {
+    margin-left:90px;
+    width:100px;
+}
 </style>
     <g:javascript src="login.js" />
 </head>
@@ -79,7 +83,7 @@
                 </div>
 
 				<p>
-					<input type='submit' value='Enter' />
+					<input id="submit_button" type='submit' value='Enter' />
 				</p>
 			</form>
 		</div>

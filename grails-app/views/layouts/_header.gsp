@@ -1,4 +1,6 @@
-<span style="font-family:'Lobster', serif; font-size:33px; color:white;">Loopback</span>
+<g:link url="/loopback">
+    <span id="header_text" >Loopback</span>
+</g:link>
 <div id="userinfo">
     <sec:ifLoggedIn>
         Howdy <sec:username/> | <g:link controller="logout">Logout</g:link>

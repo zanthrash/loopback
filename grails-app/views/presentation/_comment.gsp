@@ -1,9 +1,9 @@
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<div class="commentBox" id="comment_${comment.id}">
-    <h1>${comment.text}</h1>
+<div class="comment" id="comment_${comment.id}">
+    <h2>${comment.text}</h2>
     <div class="commentInfo">
-        <p>${comment.dateCreated}</p>
-        <p>${comment.clientIPAddress}</p>
+        <span class="comment_date"><g:formatDate date="${comment.dateCreated}" format="MMM dd, yyyy @ h:mm a" /> </span>
+        <span class="comment_client">${comment.clientIPAddress}</span>
     </div>
 </div>

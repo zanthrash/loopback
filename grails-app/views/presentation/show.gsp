@@ -6,11 +6,11 @@
     </head>
     <body>
         <content tag="header">
-            <h1>${presentation.title}</h1>
         </content>
         <div id="main">
+            <h1>${presentation.title}</h1>
             <div id="commentBox">
-                <g:each in="${presentation.comments}" var="comment">
+                <g:each in="${comments}" var="comment">
                     <g:render template="comment" model="['comment':comment]"/>
                 </g:each>
             </div>
@@ -20,10 +20,10 @@
             <div id="accessCode">
                 Access Code:${presentation.accessCode}
             </div>
-            <div>
-                <p>${commentCount.size()} commenters</p>
+            <div id="comment_count">
+                <p>${commentCount.size()} commenter<g:if test="${commentCount.size() > 1}">s</g:if></p>
                 <g:each in="${commentCount}" var="count">
-                    ${count.key} : ${count.value}
+                    <h3>${count.key.padRight(20, '.')}  ${count.value} post<g:if test="${count.value > 1}">s</g:if></h3>
                 </g:each>
 
             </div>
