@@ -87,6 +87,9 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+
+    debug  'grails.app', 'com.loopback'
+
 }
 
 // Added by the Spring Security Core plugin:

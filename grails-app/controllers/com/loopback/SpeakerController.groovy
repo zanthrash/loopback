@@ -12,7 +12,8 @@ class SpeakerController {
         def speaker = Speaker.findByUser(user)
 
         [speaker:speaker]
-
     }
+
+
 
 }
