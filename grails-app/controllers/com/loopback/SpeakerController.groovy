@@ -10,8 +10,9 @@ class SpeakerController {
     def index = {
         def user = springSecurityService.currentUser
         def speaker = Speaker.findByUser(user)
+        def presentations = speaker.presentations.groupBy{it.date[Calendar.YEAR]}.sort{it.key}
 
-        [speaker:speaker]
+        [speaker:speaker, presentations:presentations]
     }
 
 

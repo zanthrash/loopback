@@ -30,7 +30,7 @@ class BootStrap {
         log.info "initEvent..."
         def event = new Event(name: "The Main Event")
 
-        def presentationOne = new Presentation(title:"How to shave a yak in 43 steps!", accessCode:"1234")
+        def presentationOne = new Presentation(title:"How to shave a yak in 43 steps!", accessCode:"1234", date: new Date())
         def speakerOne = new Speaker(user: createUser('speaker1'), firstName: 'Speaker', lastName: 'One', bio: "Code Master")
 
 //        presentationOne.addToSpeakers(speakerOne)

@@ -398,7 +398,7 @@ div#userinfo{
 }
 
 #sidebar #accessCode {
-    font-size:2em;
+    font-size:1.5em;
 }
 
 #sidebar #comment_count {
@@ -412,6 +412,24 @@ div#userinfo{
 
 #sidebar #comment_count h3 {
     font-family:"Inconsolata";
+}
+
+
+#presentation_date{
+   margin:0 10px 0 10px;
+}
+
+#presentation_link{
+
+}
+
+#presentation_list {
+    margin-top:20px;
+}
+
+#presentation_list p {
+    margin-top:10px;
+    font-size:1.2em;
 }
 
 /*		Default Layout: 992px.

@@ -20,6 +20,9 @@
             <div id="accessCode">
                 Access Code:${presentation.accessCode}
             </div>
+
+            <g:link controller="speaker" action="index">My Presentations</g:link>
+
             <div id="comment_count">
                 <p>${commentCount.size()} commenter<g:if test="${commentCount.size() > 1}">s</g:if></p>
                 <g:each in="${commentCount}" var="count">
