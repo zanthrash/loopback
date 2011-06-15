@@ -3,7 +3,7 @@ package com.loopback
 class Presentation {
 
     static hasMany = [comments: Comment]
-    Event event
+    String event
     Speaker speaker
     Date dateCreated
     Date date

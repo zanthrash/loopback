@@ -9,6 +9,7 @@ import org.junit.runners.JUnit4
 import static org.hamcrest.CoreMatchers.*
 import static org.junit.matchers.JUnitMatchers.*
 import com.lonecyprus.grails.test.Expectations
+import org.junit.After
 
 @RunWith(JUnit4.class)
 class EventTests extends GrailsUnitTestCase {
@@ -18,6 +19,11 @@ class EventTests extends GrailsUnitTestCase {
         super.setUp()
         mockForConstraintsTests Event
         Expectations.applyTo Event
+    }
+
+    @After
+    void tearDown() {
+        super.tearDown()
     }
 
     @Test
@@ -30,6 +36,7 @@ class EventTests extends GrailsUnitTestCase {
             println it.field
         }
         assertThat event.errors.getFieldErrorCount('name'), equalTo(1)
+        assert event.errors.getFieldError('name').code == 'nullable'
     }
 
     @Test
@@ -39,6 +46,7 @@ class EventTests extends GrailsUnitTestCase {
         event.expectNameIsNotNullable()
         event.expectNameIsNotBlank()
         event.expectNameHasMaxSize(40)
+        event.expectNameHasAValidator()
         event.expectNameIsValid()
     }
 }

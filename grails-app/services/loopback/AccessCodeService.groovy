@@ -9,11 +9,20 @@ class AccessCodeService {
 
     def createFrom(presentationTitle, event) {
         def payload = "${presentationTitle}${event}${System.nanoTime()}"
-        MessageDigest md = MessageDigest.getInstance("SHA1")
-        md.update payload.getBytes()
+        MessageDigest md = createMessageDigest(payload)
 
-        def sha1Hex = new BigInteger(1,md.digest()).toString(16).padLeft(40,'0')
+        def sha1Hex = createSha1Hex(md)
 
         sha1Hex[0..7]
+    }
+
+    MessageDigest createMessageDigest(GString payload) {
+        MessageDigest md = MessageDigest.getInstance("SHA1")
+        md.update payload.getBytes()
+        return md
+    }
+
+    String createSha1Hex(MessageDigest md) {
+        return new BigInteger(1, md.digest()).toString(16).padLeft(40, '0')
     }
 }
