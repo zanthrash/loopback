@@ -7,7 +7,6 @@
 *.war
 target/
 out/
-src/
 **/database/
 **/out/
 *~
