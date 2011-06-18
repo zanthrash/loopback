@@ -8,8 +8,10 @@ class UrlMappings {
 		}
 		"/login"(controller: 'login', action:'auth')
 
+		"/comment/$action/$accessCode"(controller: 'comment')
+
 		"/"(controller:'speaker', action:"index")
 		"500"(view:'/error')
-		"404"(view:'/404d')
+		"404"(view:'/error404')
 	}
 }
