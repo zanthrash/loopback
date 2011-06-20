@@ -1,8 +1,8 @@
-package loopback
+package com.loopback
 
 import grails.test.*
 
-class AccessCodeServiceTests extends GrailsUnitTestCase {
+class FakeCodeCoverageTests extends GrailsUnitTestCase {
     protected void setUp() {
         super.setUp()
     }

@@ -32,9 +32,8 @@ class PresentationControllerTests extends ControllerUnitTestCase {
 
     @Test
     void addFailsWhenSpeakerIsNotFound() {
+        controller.springSecurityService = [currentUser: null]
         controller.add()
-
-        controller.metaClass.methods.unique().sort().each {println it}
 
         assertThat controller.redirectArgs.size(),  equalTo(2)
         assertThat controller.redirectArgs.controller, equalTo("speaker")
@@ -44,19 +43,19 @@ class PresentationControllerTests extends ControllerUnitTestCase {
     }
 
     @Test
-    void addSucceedsWhenSpeakIsFound() {
+    void testAddSucceedsWhenSpeakerIsFound() {
         controller.springSecurityService = [currentUser: user]
         controller.accessCodeService = [createFrom: {title, event -> "abcd1234"}]
         mockDomain Presentation
 
         controller.add()
 
-        assert controller.redirectArgs.size() == 2
-        assert controller.redirectArgs.controller == "speaker"
-        assert controller.redirectArgs.action == "index"
-
-        assert controller.flash.message == "'Test Presentation' added with access code: abcd1234"
-        assertThat controller.flash.message.toString(), equalTo("'Test Presentation' added with access code: abcd1234")
+        controller.with{
+            assert redirectArgs.size() == 2
+            assert redirectArgs.controller == "speaker"
+            assert redirectArgs.action == "index"
+            assert flash.message == "'Test Presentation' added with access code: abcd1234"
+        }
     }
 
     @Test

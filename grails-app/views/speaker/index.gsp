@@ -36,8 +36,8 @@
           <h3>Add another presentation</h3>
           <g:form controller="presentation" action="add">
 
-              <label for="eventName">Event:</label> <g:textField name="eventName"/><br/>
-              <label for="title">Title:</label> <g:textField name="title"/><br>
+              <label for="eventName">Event:</label> <g:textField size="30" name="eventName"/><br/>
+              <label for="title">Title:</label> <g:textField size="30" name="title"/><br>
               <label for="date">Date:</label><g:datePicker name="date" precision="day"/><br>
               <g:submitButton name="submit" value="Submit"/><br>
           </g:form>

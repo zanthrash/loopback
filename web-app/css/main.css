@@ -294,7 +294,7 @@ a#homelink:link{
 
 #page {
     display: block;
-    width: 950px;
+    width: 965px;
     margin: 0px auto;
 }
 
@@ -335,7 +335,7 @@ a#homelink:link{
 
 #content #sidebar {
     float:left;
-    width:250;
+    width:250px;
     margin:0 0 0 15px;
 }
 
@@ -366,7 +366,7 @@ a#homelink:link{
 
 .comment h2 {
     padding:5px;
-    font-family:'Cabin Sketch';
+    font-family:'Cabin Sketch', ;
     font-size:4em;
 }
 
@@ -379,6 +379,18 @@ a#homelink:link{
 
 .commentInfo .comment_client {
     float:right;
+}
+
+#add_form {
+    margin-top: 40px;
+}
+
+#add_form input[type=text]{
+    float: right;
+}
+
+br {
+    clear: both;
 }
 
 #login #right {

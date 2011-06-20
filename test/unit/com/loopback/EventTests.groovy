@@ -18,7 +18,6 @@ class EventTests extends GrailsUnitTestCase {
     void setup() {
         super.setUp()
         mockForConstraintsTests Event
-        Expectations.applyTo Event
     }
 
     @After
@@ -27,26 +26,27 @@ class EventTests extends GrailsUnitTestCase {
     }
 
     @Test
-    void eventNameShouldNotValidateIfNull() {
+    void testEventNameShouldNotValidateIfNull() {
         def event = new Event()
 
         assertFalse event.validate()
         assertTrue event.hasErrors()
-        event.errors.getAllErrors().each{
-            println it.field
-        }
-        assertThat event.errors.getFieldErrorCount('name'), equalTo(1)
-        assert event.errors.getFieldError('name').code == 'nullable'
+
+        assert event.errors['name'] == 'nullable'
     }
 
     @Test
-    void eventNameShouldNotBeNull() {
+    void testEventNameConstraints() {
+        Expectations.applyTo Event
 
-        def event = new Event(name:'jojo')
+        def event = new Event()
+
         event.expectNameIsNotNullable()
         event.expectNameIsNotBlank()
         event.expectNameHasMaxSize(40)
+        event.expectNameDoesNotHaveMinSize(0)
         event.expectNameHasAValidator()
-        event.expectNameIsValid()
+
+        event.expectNameAreValid('jojo', 'bobo')
     }
 }

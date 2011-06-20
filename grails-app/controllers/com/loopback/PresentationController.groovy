@@ -17,7 +17,7 @@ class PresentationController {
     }
 
     @Secured(['ROLE_USER'])
-    def add ={
+    def add = {
         def user = springSecurityService.currentUser
         def speaker = Speaker.findByUser( user )
         if(speaker) {

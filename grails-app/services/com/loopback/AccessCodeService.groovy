@@ -1,4 +1,4 @@
-package loopback
+package com.loopback
 
 import java.security.MessageDigest
 import sun.security.util.BigInt
