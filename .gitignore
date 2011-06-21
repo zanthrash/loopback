@@ -9,4 +9,5 @@ target/
 out/
 **/database/
 **/out/
+src/templates/
 *~
