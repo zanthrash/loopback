@@ -6,6 +6,7 @@ import grails.converters.JSON
 
 class CommentController implements InitializingBean{
 
+    def commentService
     BayeuxServer bayeux
     def bayeuxSession
 
@@ -33,6 +34,17 @@ class CommentController implements InitializingBean{
         render view:'comment', model:[presentation:presentation]
     }
 
+	def myComments = {
+		def presentation = Presentation.findByAccessCode(params.accessCode)
+        if(presentation) {
+			def myComments = commentService.commentsForIp(request.getRemoteAddr(), presentation)
+            render view:'my', model:[presentation:presentation, myComments: myComments]
+        } else {
+            flash.message = "Could not find presentation with that access code"
+            redirect controller:'login', action: 'auth'
+        }
+	}
+
     def publishComment(Presentation presentation, Comment comment) {
         def channel = "/comment/${presentation.id}"
 
@@ -46,7 +58,7 @@ class CommentController implements InitializingBean{
             log.warn "Could not publish comment ${comment.id} for presentation: ${presentation.id}"
         }
     }
-
+    
     def code = {
         def presentation = Presentation.findByAccessCode(params.accessCode)
         if(presentation) {

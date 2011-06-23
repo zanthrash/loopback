@@ -381,6 +381,11 @@ a#homelink:link{
     float:right;
 }
 
+textarea#comment{
+    font-size: 2em;
+    font-family: 'Cabin Sketch';
+}
+
 #add_form {
     margin-top: 40px;
 }

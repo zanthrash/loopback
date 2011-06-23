@@ -16,7 +16,7 @@ class BootStrap {
 
     def initSecurity() {
         log.info "initSecurity..."
-        def admin = Role.findByAuthority("ROLE_ADMIN") ?: new Role(authority:"ROLE_ADMIN").save(flush:true, failOnError:true)
+        def admin = Role.findByAuthority("ROLE_ADMIt N") ?: new Role(authority:"ROLE_ADMIN").save(flush:true, failOnError:true)
         def user = Role.findByAuthority("ROLE_USER") ?: new Role(authority:"ROLE_USER").save(flush:true, failOnError:true)
 
         if(!User.findByUsername('admin')) {

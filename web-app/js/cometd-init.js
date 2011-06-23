@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var resultsChannel = $("#commentBox").attr('data-channel');
     var channels = [ resultsChannel ];
+//    alert(resultsChannel);
 
     var testCallback = function(message) {
     };
@@ -46,7 +47,7 @@ $(document).ready(function(){
 
 function updateChatComment(jsonMessage) {
     var json = $.parseJSON(jsonMessage)
-
+//    alert(json);
     $("#commentBox > div:first-child").before(json.commentHtml);
     $("#comment_count").html(json.commentCountHtml);
 

@@ -1,31 +1,15 @@
 package com.loopback
 
-import org.springframework.beans.factory.InitializingBean
-import org.cometd.bayeux.Bayeux
-import org.cometd.bayeux.server.BayeuxServer
-import org.cometd.server.BayeuxServerImpl
-import org.cometd.bayeux.server.ServerSession
-import org.codehaus.groovy.grails.plugins.web.taglib.ApplicationTagLib
+class CommentService {
 
-class CommentService implements InitializingBean{
+	static transactional = true
 
-    BayeuxServer bayeux
-    def bayeuxSession
-
-    static transactional = true
-
-    void afterPropertiesSet() {
-        bayeuxSession = bayeux.newLocalSession()
-        bayeuxSession.handshake()
-    }
-
-    def publishComment(Presentation presentation, Comment comment) {
-        def channel = "/comment/${presentation.id}"
-
-        def g = new ApplicationTagLib()
-
-
-    }
-
-
+	List<Comment> commentsForIp(String ip, Presentation presentation) {
+		def c = Comment.createCriteria()
+		return c.list {
+			eq("clientIPAddress", ip)
+			eq("presentation", presentation)
+			order("dateCreated", "desc")
+		}
+	}
 }
