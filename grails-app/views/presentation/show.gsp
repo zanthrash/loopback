@@ -14,9 +14,9 @@
         <div id="main">
             <h1>${presentation.title}</h1>
             <div id="commentBox" data-channel="/comment/${presentation.id}">
-                <g:each in="${comments}" var="comment">
-                    <g:render template="comment" model="['comment':comment]"/>
-                </g:each>
+					<g:comments comments="${comments}">
+                        <g:comment comment="${comment}"/>
+					</g:comments>
             </div>
         </div>
 

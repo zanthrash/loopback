@@ -47,7 +47,6 @@ $(document).ready(function(){
 function updateChatComment(jsonMessage) {
     var json = $.parseJSON(jsonMessage)
 
-//    alert("updateChatComment :" + json.commentCountHtml);
     $("#commentBox > div:first-child").before(json.commentHtml);
     $("#comment_count").html(json.commentCountHtml);
 
