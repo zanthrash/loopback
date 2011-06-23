@@ -12,9 +12,9 @@ grails.project.dependency.resolution = {
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     repositories {
-//        grailsPlugins()
-//        grailsHome()
-//        grailsCentral()
+        grailsPlugins()
+        grailsHome()
+        grailsCentral()
 
         flatDir name:"localRepo", dirs:'repo'
 
