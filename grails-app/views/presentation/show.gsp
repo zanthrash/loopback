@@ -3,13 +3,17 @@
     <head>
         <meta name="layout" content="app"/>
         <title>${presentation.title}</title>
+        <g:javascript src="org/cometd.js" />
+        <g:javascript src="jquery/jquery.cometd.js" />
+        <g:javascript src="cometd-init.js" />
+        <g:javascript src="cometd-subscriptions.js"/>
     </head>
     <body>
         <content tag="header">
         </content>
         <div id="main">
             <h1>${presentation.title}</h1>
-            <div id="commentBox">
+            <div id="commentBox" data-channel="/comment/${presentation.id}">
                 <g:each in="${comments}" var="comment">
                     <g:render template="comment" model="['comment':comment]"/>
                 </g:each>
@@ -24,11 +28,7 @@
             <g:link controller="speaker" action="index">My Presentations</g:link>
 
             <div id="comment_count">
-                <p>${commentCount.size()} commenter<g:if test="${commentCount.size() > 1}">s</g:if></p>
-                <g:each in="${commentCount}" var="count">
-                    <h3>${count.key.padRight(20, '.')}  ${count.value} post<g:if test="${count.value > 1}">s</g:if></h3>
-                </g:each>
-
+                <g:render template="commentCount" model="['commentCount':commentCount]" />
             </div>
         </div>
     </body>
