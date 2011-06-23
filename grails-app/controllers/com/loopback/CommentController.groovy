@@ -1,6 +1,7 @@
 package com.loopback
 
 class CommentController {
+	def commentService
 
     def index = {
     }
@@ -19,6 +20,17 @@ class CommentController {
 
         render view:'comment', model:[presentation:presentation]
     }
+
+	def myComments = {
+		def presentation = Presentation.findByAccessCode(params.accessCode)
+        if(presentation) {
+			def myComments = commentService.commentsForIp(request.getRemoteAddr(), presentation)
+            render view:'my', model:[presentation:presentation, myComments: myComments]
+        } else {
+            flash.message = "Could not find presentation with that access code"
+            redirect controller:'login', action: 'auth'
+        }
+	}
 
     def code = {
         def presentation = Presentation.findByAccessCode(params.accessCode)
