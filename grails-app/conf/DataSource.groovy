@@ -22,6 +22,10 @@ environments {
 //            password = "loopback"
 //            loggingSql = false
 
+            dataSource {
+                dbCreate = "update"
+                url = "jdbc:hsqldb:mem:testDb"
+            }
 
         }
 
