@@ -366,7 +366,7 @@ a#homelink:link{
 
 .comment h2 {
     padding:5px;
-    font-family:'Cabin Sketch', ;
+    font-family:'Cabin Sketch' ;
     font-size:4em;
 }
 
@@ -379,6 +379,11 @@ a#homelink:link{
 
 .commentInfo .comment_client {
     float:right;
+}
+
+textarea#comment{
+    font-size: 2em;
+    font-family: 'Cabin Sketch';
 }
 
 #add_form {

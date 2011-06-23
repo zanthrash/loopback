@@ -23,8 +23,6 @@ environments {
 //            loggingSql = false
 
 
-            dbCreate = "update"
-            url = "jdbc:hsqldb:mem:testDb"
         }
 
     }
@@ -35,9 +33,15 @@ environments {
         }
     }
     production {
+//        dataSource {
+//            dbCreate = "update"
+//            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+//        }
+
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+            dbCreate = "create-drop"
+            jndiName = "java:comp/env/jdbc/loopbak"
         }
+
     }
 }

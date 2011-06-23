@@ -1,5 +1,7 @@
 package com.loopback
 
+import grails.plugins.springsecurity.Secured
+
 class CommentController {
 	def commentService
 
