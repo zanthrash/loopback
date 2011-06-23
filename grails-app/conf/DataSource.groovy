@@ -23,7 +23,7 @@ environments {
 //            loggingSql = false
 
             dataSource {
-                dbCreate = "update"
+                dbCreate = "create"
                 url = "jdbc:hsqldb:mem:testDb"
             }
 
