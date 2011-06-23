@@ -9,6 +9,11 @@
   </head>
   <body>
     <content tag="header">
+	<div id="userinfo">
+		<g:link controller="comment" action="myComments" params="${[accessCode: presentation.accessCode]}">
+			My Comments
+		</g:link>
+	</div>
     </content>
 
     <div id="main">
