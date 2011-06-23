@@ -10,9 +10,9 @@
         <div id="main">
             <h1>${presentation.title}</h1>
             <div id="commentBox">
-                <g:each in="${comments}" var="comment">
-                    <g:render template="comment" model="['comment':comment]"/>
-                </g:each>
+					<g:comments comments="${comments}">
+						<g:comment comment="${comment}"/>
+					</g:comments>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
             <div id="comment_count">
                 <p>${commentCount.size()} commenter<g:if test="${commentCount.size() > 1}">s</g:if></p>
                 <g:each in="${commentCount}" var="count">
-                    <h3>${count.key.padRight(20, '.')}  ${count.value} post<g:if test="${count.value > 1}">s</g:if></h3>
+                    <h3><g:fixedWidthIp ip="${count.key}" width="20" pad="."/>  ${count.value} post<g:if test="${count.value > 1}">s</g:if></h3>
                 </g:each>
 
             </div>

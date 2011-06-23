@@ -1,5 +1,3 @@
-
-<%@ page contentType="text/html;charset=UTF-8" %>
 <div class="comment" id="comment_${comment.id}">
     <h2>${comment.text}</h2>
     <div class="commentInfo">
