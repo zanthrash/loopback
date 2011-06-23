@@ -22,10 +22,8 @@ environments {
 //            password = "loopback"
 //            loggingSql = false
 
-            dataSource {
-                dbCreate = "create"
+                dbCreate = "create-drop"
                 url = "jdbc:hsqldb:mem:testDb"
-            }
 
         }
 
