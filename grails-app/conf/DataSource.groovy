@@ -21,9 +21,8 @@ environments {
 //            username = "loopback"
 //            password = "loopback"
 //            loggingSql = false
-
-                dbCreate = "create-drop"
-                url = "jdbc:hsqldb:mem:testDb"
+            dbCreate = "update"
+            url = "jdbc:hsqldb:mem:testDb"
 
         }
 
