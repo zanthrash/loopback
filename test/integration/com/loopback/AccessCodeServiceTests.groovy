@@ -40,7 +40,9 @@ class AccessCodeServiceTests extends GrailsUnitTestCase{
 
     @Test
     void createTheSameAccessCodeTwice() {
-        System.metaClass.static.nanoTime = {new Date()}
+
+        def mockSystem = mockFor(System)
+        mockSystem.demand.static.nanoTime(1..2){-> new Date()}
 
         def presentationName = "PresentationOne"
         def eventName = "EventOne"

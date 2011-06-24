@@ -47,8 +47,4 @@ class PresentationTests extends GrailsUnitTestCase {
         assertThat presentation.errors['title'], equalTo('blank')
     }
 
-    @Test
-    void nullAccessCodeShouldFail() {
-
-    }
 }
