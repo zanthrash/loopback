@@ -11,7 +11,14 @@ class SpeakerControllerTests extends ControllerUnitTestCase {
         super.tearDown()
     }
 
-    void testSomething() {
+    void testCallingIndexForLoggedInUserShouldReturnSpeakerAndPresentations() {
+        User user = new User(id: 1)
+        mockDomain Speaker, [new Speaker(user: user, presentations:[] as SortedSet) ]
+        controller.springSecurityService = [currentUser: user]
+        def model = controller.index()
 
+        assertEquals model.size() , 2
+        assertNotNull model.speaker
+        assertNotNull model.presentations
     }
 }

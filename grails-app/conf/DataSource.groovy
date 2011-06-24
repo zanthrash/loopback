@@ -24,7 +24,6 @@ environments {
 
             dbCreate = "update"
             url = "jdbc:hsqldb:mem:testDb"
-
         }
 
     }

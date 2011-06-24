@@ -30,6 +30,7 @@ class PresentationControllerTests extends ControllerUnitTestCase {
         super.tearDown()
     }
 
+    //Controller Action with redirect
     @Test
     void addFailsWhenSpeakerIsNotFound() {
         controller.springSecurityService = [currentUser: null]
@@ -42,39 +43,10 @@ class PresentationControllerTests extends ControllerUnitTestCase {
         assert controller.flash.message == "Could not find a Speaker to add Test Presentation to your list at this time"
     }
 
-    @Test
-    void testAddSucceedsWhenSpeakerIsFound() {
-        controller.springSecurityService = [currentUser: user]
-        controller.accessCodeService = [createFrom: {title, event -> "abcd1234"}]
-        mockDomain Presentation
-
-        controller.add()
-
-        controller.with{
-            assert redirectArgs.size() == 2
-            assert redirectArgs.controller == "speaker"
-            assert redirectArgs.action == "index"
-            assert flash.message == "'Test Presentation' added with access code: abcd1234"
-        }
-    }
-
-    @Test
-    void addFailsWhenPresentationFailsValidationOnSave() {
-        controller.springSecurityService = [currentUser: user]
-        controller.accessCodeService = [createFrom: {tilte, event -> "abcd1234"}]
-        controller.params.title = null //Will cause validation error
-        mockDomain Presentation
-
-        controller.add()
-
-        assert controller.redirectArgs.size() == 2
-        assert controller.redirectArgs.controller == "speaker"
-        assert controller.redirectArgs.action == "index"
-
-        assert controller.flash.message == "Could not add null to your list at this time"
-    }
 
 
+
+    //Controller action that returns a model (0, 1, Many testing)
     @Test
     void showPresentationWithZeroComments() {
         controller.params.id = 1
@@ -89,34 +61,10 @@ class PresentationControllerTests extends ControllerUnitTestCase {
         assert model.commentCount == [:]
     }
 
-    @Test
-    void showPresentationWithOneComment() {
-        controller.params.id = 1
-        def presentation = new Presentation(id: 1, comments:[new Comment(clientIPAddress: 'joey', text: 'blah')])
-        mockDomain Presentation, [presentation]
 
-        def model = controller.show()
 
-        assert model.presentation == presentation
-        assert model.comments.size() == 1
-        assert model.commentCount == ['joey':1]
-    }
 
-    @Test
-    void showPresentationWithManyComments() {
-        controller.params.id = 1
-        def comments = []
-        3.times{ comments << new Comment(id:it, clientIPAddress: "$it", text: "$it")}
-        def presentation = new Presentation(comments: comments)
-        mockDomain Presentation, [presentation]
-
-        def model = controller.show()
-
-        assert model.presentation == presentation
-        assert model.comments.size() == 3
-        assert model.commentCount == ["0":1, "1":1, "2":1]
-    }
-
+    //Temporal Testing (mocking out time)
     @Test
     void checkTimeShouldHaveTimeLeft() {
         controller.params.date = "01/30/2011"
