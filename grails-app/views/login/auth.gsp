@@ -9,7 +9,7 @@
 	text-align:center;
 }
 #login .inner {
-	width:485px;
+	width:685px;
 	margin:0px auto;
 	text-align:left;
 	padding:10px;
@@ -25,10 +25,10 @@
 #login .inner .cssform p {
 	clear: left;
 	margin: 0;
-	padding: 5px 0 8px 0;
+	padding: 8px 0 8px 0;
 	padding-left: 105px;
 	border-top: 1px dashed gray;
-	margin-bottom: 10px;
+	margin: 2px;
 	height: 1%;
 }
 #login .inner .cssform input[type='text'] {
@@ -43,9 +43,22 @@
 #login .inner .login_message {color:red;}
 #login .inner .text_ {width:120px;}
 #login .inner .chk {height:12px;}
-#submit_button {
+#login_button, #attend_button {
     margin-left:90px;
     width:100px;
+}
+#attend_button {
+	float: right;
+}
+.clearboth { clear: both;}
+#login #left {
+	padding-right:30px;
+	border-right: 6px solid #2B251E;
+}
+#login #right {
+	float:right;
+	padding: 0px 10px 0px 0px;
+
 }
 </style>
     <g:javascript src="login.js" />
@@ -57,35 +70,46 @@
 			<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
 			</g:if>
-			<div class='fheader'>Please Login..</div>
-			<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
-                <div id="right">
-                    <p>
-                        <label for='username'>Login ID</label>
-                        <input type='text' class='text_' name='j_username' id='username'/>
-                    </p>
-                    <p>
-                        <label for='password'>Password</label>
-                        <input type='password' class='text_' name='j_password' id='password'/>
-                    </p>
-                    <p>
-                        <label for='remember_me'>Remember me</label>
-                        <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'
-                            <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-                    </p>
-                </div>
-                <div id="left">
-                    <p>
-                        <label for="accessCode">Access Code:</label>
-                        <g:textField name="accessCode"/>
-                    </p>
+			<div id="left">
+				<div class='fheader'>Login</div>
+				<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+					<p>
+						<label for='username'>Login ID</label>
+						<input type='text' class='text_' name='j_username' id='username'/>
+					</p>
 
-                </div>
+					<p>
+						<label for='password'>Password</label>
+						<input type='password' class='text_' name='j_password' id='password'/>
+					</p>
+
+					<p>
+						<label for='remember_me'>Remember me</label>
+						<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'
+								 <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+					</p>
+
+					<p>
+						<input id="login_button" type='submit' value='Login'/>
+					</p>
+				</form>
+			</div>
+			<div id="right">
+				<div class='fheader'>Attend</div>
+				<g:form controller="comment" action="post" class='cssform'>
+				<p>
+					<label for="accessCode">Access Code:</label>
+					<g:textField name="accessCode"/>
+				</p>
+
 
 				<p>
-					<input id="submit_button" type='submit' value='Enter' />
+					<input id="attend_button" type='submit' value='Attend'/>
 				</p>
-			</form>
+				</g:form>
+			</div>
+			<div class='clearboth'> </div>
+
 		</div>
 	</div>
 <script type='text/javascript'>
